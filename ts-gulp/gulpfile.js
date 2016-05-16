@@ -21,7 +21,6 @@ var PATH = {
     pages: ["src/*.html", "src/*.css", "src/*.jpg"],
 };
 
-console.log(TSCONFIG);
 // HELPER FUNCTION TO COMPILE TYPESCRIPT WITH Browserify + Tsify
 function compileTS() {
     return browserify({
