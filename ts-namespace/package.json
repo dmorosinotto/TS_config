@@ -10,7 +10,7 @@
     "clean": "node node_modules/.bin/rimraf dist typings node_modules",
     "clear:dist": "node node_modules/.bin/rimraf dist  &&  mkdir dist",
     "copy:dist": "node node_modules/.bin/copyfiles -u 1 src/**/*.css src/**/*.jpg src/**/*.html dist",
-    "prebuild": "npm run clear:dist && mkdir dist",
+    "prebuild": "npm run clear:dist",
     "build": "npm run tsc -- -w -pretty -p .",
     "preserve": "npm run copy:dist",
     "serve": "node node_modules/.bin/http-server -p 8080 -c-1 --cors",
