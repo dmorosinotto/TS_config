@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Typescript + Namespace</title>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script> <!-- "https://code.jquery.com/jquery-2.2.3.min.js" -->  
+        <script src="node_modules/angular/angular.min.js"></script> <!-- "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" -->
+    </head>
+    <body>
+        <h1>Typescript project build with Namespace (tsc + outFile bundle)</h1>
+        <p id="greeting">Loading ...</p>
+        <script src="dist/bundle.js"></script>
+        <hr>    
+        <aside ng-app="myapp">
+            <div ng-controller="MainCtrl as vm">
+                <h3>External name: <input ng-model="vm.name"> {{vm.name}} </h3>
+                <hr>
+                <hello-world name="vm.name" on-changed="vm.show($event)"></hello-world>
+            </div>
+        </aside>
+    </body>
+</html>

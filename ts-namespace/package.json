@@ -1,0 +1,37 @@
+{
+  "name": "ts-namespace",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run typings -- install",
+    "start": "concurrently --kill-others 'npm run build' 'npm run serve' ",
+    "clean": "node node_modules/.bin/rimraf dist typings node_modules",
+    "clear:dist": "node node_modules/.bin/rimraf dist  &&  mkdir dist",
+    "copy:dist": "node node_modules/.bin/copyfiles -u 1 src/**/*.css src/**/*.jpg src/**/*.html dist",
+    "prebuild": "npm run clear:dist && mkdir dist",
+    "build": "npm run tsc -- -w -pretty -p .",
+    "preserve": "npm run copy:dist",
+    "serve": "node node_modules/.bin/http-server -p 8080 -c-1 --cors",
+    "tsc": "node node_modules/.bin/tsc",
+    "typings": "node node_modules/.bin/typings"
+  },
+  "keywords": [
+    "Typescript"
+  ],
+  "author": "Daniele Morosinotto",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^2.1.0",
+    "copyfiles": "^0.2.1",
+    "http-server": "^0.9.0",
+    "rimraf": "^2.5.2",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "jquery": "^2.2.3"
+  }
+}

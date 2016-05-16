@@ -1,0 +1,49 @@
+{
+  "name": "ts-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run typings -- install",
+    "start": "concurrently --kill-others 'npm run build' 'npm run serve' ",
+    "serve": "node node_modules/.bin/http-server -p 8080 -c-1 --cors",
+    "build": "npm run gulp -- watch",
+    "prebuild": "npm run clear:dist",
+    "prod": "npm run gulp -- prod",
+    "clean": "node node_modules/.bin/rimraf dist typings node_modules",
+    "clear:dist": "node node_modules/.bin/rimraf dist  &&  mkdir dist",
+    "gulp": "node node_modules/.bin/gulp",
+    "typings": "node node_modules/.bin/typings"
+  },
+  "keywords": [
+    "Typescript",
+    "Gulp",
+    "Browserify"
+  ],
+  "author": "Daniele Morosinotto",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "concurrently": "^2.1.0",
+    "copyfiles": "^0.2.1",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "http-server": "^0.9.0",
+    "rimraf": "^2.5.2",
+    "tsify": "^0.15.5",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "jquery": "^2.2.3",
+    "ng-metadata": "^1.11.0",
+    "reflect-metadata": "^0.1.3"
+  }
+}
