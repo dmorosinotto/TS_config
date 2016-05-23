@@ -10,6 +10,7 @@
     },
     "files": [
         "src/main.ts", 
-        "typings/browser.d.ts"
+        "typings/browser.d.ts",
+        "typings-browserify.d.ts"
     ]
 }

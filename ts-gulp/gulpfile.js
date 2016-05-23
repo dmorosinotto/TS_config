@@ -31,6 +31,7 @@ function compileTS() {
         packageCache: {}
     })
     .plugin(tsify)
+    .transform('brfs') //USE BRFS TRASFORM TO INCLUDE HTML/CSS IN BUNDLE require('fs').readFileSync(...)
 }
 
 function bundleJS() {
@@ -71,7 +72,7 @@ gulp.task("prod", ["copy:dist"], function () {
     var uglify = require('gulp-uglify');
     var buffer = require('vinyl-buffer');
     var sourcemaps = require('gulp-sourcemaps');
-    
+
     return ((TSCONFIG.compilerOptions.sourceMap) 
             ? bundleJS() // UGLIFY + KEEP SOURCEMAP
                 .pipe(buffer())

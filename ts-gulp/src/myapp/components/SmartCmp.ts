@@ -1,6 +1,8 @@
 import { myapp } from "../myapp";
 import { NameSvc } from "../services/NameSvc";
 
+// console.info("SMARTCMP __dirname=", __dirname); // =  "/src/myapp/components"
+
 class SmartCmp {
    static $inject = ["NameSvc"];
     constructor(private svc: NameSvc) {
