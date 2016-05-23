@@ -17,7 +17,7 @@
     "tsc": "node node_modules/.bin/tsc",
     "browserify": "node node_modules/.bin/browserify",
     "watchify": "node node_modules/.bin/watchify",
-    "tsify": "npm run browserify -- src/main.ts --debug --transform=brfs -t=browserify-css --plugin=tsify --outfile dist/bundle.js",
+    "tsify": "npm run browserify -- src/main.ts --debug --transform=brfs --plugin=tsify --outfile dist/bundle.js",
     "typings": "node node_modules/.bin/typings"
   },
   "keywords": [
