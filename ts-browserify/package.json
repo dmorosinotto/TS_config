@@ -11,13 +11,13 @@
     "clear:dist": "node node_modules/.bin/rimraf dist  &&  mkdir dist",
     "copy:dist": "node node_modules/.bin/copyfiles -u 1 src/**/*.css src/**/*.jpg src/**/*.html dist",
     "prebuild": "npm run clear:dist",
-    "build": "npm run watchify -- src/main.ts --debug --plugin=tsify --outfile dist/bundle.js  --verbose",
+    "build": "npm run watchify -- src/main.ts --debug --transform=brfs --plugin=tsify --outfile dist/bundle.js  --verbose",
     "preserve": "npm run copy:dist",
     "serve": "node node_modules/.bin/http-server -p 8080 -c-1 --cors",
     "tsc": "node node_modules/.bin/tsc",
     "browserify": "node node_modules/.bin/browserify",
     "watchify": "node node_modules/.bin/watchify",
-    "tsify": "npm run browserify -- src/main.ts --debug --plugin=tsify --outfile dist/bundle.js",
+    "tsify": "npm run browserify -- src/main.ts --debug --transform=brfs -t=browserify-css --plugin=tsify --outfile dist/bundle.js",
     "typings": "node node_modules/.bin/typings"
   },
   "keywords": [
@@ -27,10 +27,12 @@
   "author": "Daniele Morosinotto",
   "license": "MIT",
   "devDependencies": {
+    "brfs": "^1.4.3",
     "browserify": "^13.0.1",
     "concurrently": "^2.1.0",
     "copyfiles": "^0.2.1",
     "http-server": "^0.9.0",
+    "insert-css": "^0.2.0",
     "rimraf": "^2.5.2",
     "tsify": "^0.15.5",
     "typescript": "^1.8.10",

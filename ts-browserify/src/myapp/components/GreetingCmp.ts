@@ -1,5 +1,7 @@
 import { myapp } from "../myapp"
 
+// console.log("GREETING __filename=", __filename); // = "/src/myapp/components/GreetingCmp.ts"
+
 class Greeting{
     public prefix: string;
     public name: string;
