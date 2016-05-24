@@ -5,16 +5,14 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run typings -- install",
+    "postinstall": "typings install",
     "start": "concurrently --kill-others 'npm run build' 'npm run serve' ",
-    "serve": "node node_modules/.bin/http-server -p 8080 -c-1 --cors",
-    "build": "npm run gulp -- watch",
+    "serve": "http-server -p 8080 -c-1 --cors",
+    "build": "gulp watch --tsconfig ./tsconfig.json",
     "prebuild": "npm run clear:dist",
-    "prod": "npm run gulp -- prod",
-    "clean": "node node_modules/.bin/rimraf dist typings node_modules",
-    "clear:dist": "node node_modules/.bin/rimraf dist  &&  mkdir dist",
-    "gulp": "node node_modules/.bin/gulp",
-    "typings": "node node_modules/.bin/typings"
+    "prod": "gulp prod --projdir . --sourcemap",
+    "clean": "rimraf dist typings node_modules",
+    "clear:dist": "rimraf dist  &&  mkdir dist"
   },
   "keywords": [
     "Typescript",
@@ -27,8 +25,8 @@
     "brfs": "^1.4.3",
     "browserify": "^13.0.1",
     "concurrently": "^2.1.0",
-    "copyfiles": "^0.2.1",
     "gulp": "^3.9.1",
+    "gulp-param": "^1.0.3",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
