@@ -1,7 +1,7 @@
 import { Component, Inject } from "ng-metadata/core";
 import { QuestionSvc } from "../services/question.service";
 
-// UTILIZZO BRFS TRASFORM CHE RENDE QUESTA STRINGA INLINE HTML
+//USED BRFS THAT TRASFORM THIS REQUIRE EXTRACTING RELATIVE PATH AND INLINE HTML INTO VARIBALE
 const myhtml = require("fs").readFileSync(__dirname + "/./my-app.component.html", "utf-8");
 
 @Component({

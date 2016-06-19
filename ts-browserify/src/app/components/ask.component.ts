@@ -1,8 +1,10 @@
 import {Component, Input, Output, OnInit, EventEmitter } from "ng-metadata/core";
-import template from "./ask.component.html"; //TRICK CREATO FILE .html.ts CON DENTRO export default `...`
+//TRICK EMBEDDED html INTO A MODULE FILE .html.ts WITH export default `...<html>...`
+import template from "./ask.component.html"; 
 
+//USED BRFS THAT TRASFORM THIS REQUIRE EXTRACTING RELATIVE PATH AND INLINE CSS INTO VARIBALE
 const mycss = require("fs").readFileSync(__dirname + "/../styles.css", "utf-8");
-require("insert-css")(mycss);
+require("insert-css")(mycss); //THEN USED INLINE-CSS PLUGIN TO PUT/LOAD INLINED CSS INTO HEAD
 
 @Component({
     selector: "ask",
