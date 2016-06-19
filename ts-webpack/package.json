@@ -1,5 +1,5 @@
 {
-  "name": "ts-namespace",
+  "name": "ts-webpack",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -18,7 +18,8 @@
     "typings": "node node_modules/.bin/typings"
   },
   "keywords": [
-    "Typescript"
+    "Typescript",
+    "Webpack"
   ],
   "author": "Daniele Morosinotto",
   "license": "MIT",
