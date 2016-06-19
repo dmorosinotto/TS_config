@@ -8,6 +8,7 @@ a possible migration path to NG2 using [ngMetadata](https://github.com/ngParty/n
 - **[browserify](ts-browserify)** sample using Typescript commonjs module + Browserify + Tsify to build the bundle
 - **[gulp](ts-gulp)** sample using Typescript import/export module + bundle built with Gulp (watchify + uglify for prod)
 - **[webpack](ts-webpack)** sample using Typescript import/export module + Webpack to build vendor and app bundle
+- **[systemjs](ts-systemjs)** sample using Typescript import/export module + SystemJS to run the app and load modules (NOT BUNDLE JET)
 
 
 To try a sample simply: 
