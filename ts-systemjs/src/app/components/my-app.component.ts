@@ -11,7 +11,7 @@ import { QuestionSvc } from "../services/question.service";
                and be ready to migrate to <a href="https://angular.io">NG2</a>
                <h3>JUST USE <a href="https://github.com/ngParty/ng-metadata">ngMetadata</a>!</h3>
                <hr>
-               <ask question="{{$ctrl.question}}" on-Response="$ctrl.show($event)"></ask>`
+               <ask question="{{$ctrl.question}}" on-response="$ctrl.show($event)"></ask>`
 })
 export class AppCmp {
     constructor( // inject dependency into constructor
