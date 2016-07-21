@@ -13,9 +13,10 @@
         <hr>    
         <aside ng-app="myapp">
             <div ng-controller="MainCtrl as vm">
-                <h3>External name: <input ng-model="vm.name"> {{vm.name}} </h3>
+                <h3>External name: <input ng-model="vm.name"> {{vm.name + vm.title}} </h3>
                 <hr>
                 <hello-world name="vm.name" on-changed="vm.show($event)"></hello-world>
+                <repeater-dir what="vm.name" on-repeat="vm.show($event)"></repeater-di>
             </div>
         </aside>
     </body>
