@@ -16,7 +16,7 @@ System.config({
 
     },
     map: { // define here path or where to point to resolve  external/vendor library imported in myapp
-        "lodash": "https://npmcdn.com/lodash@4.13.1", //load directly on web
+        "lodash": "https://unpkg.com/lodash@4.13.1", //load directly on web
         "rxjs": "node_modules/rxjs", //directory to load rxjs relative import --> node_modules
         "ng-metadata": "node_modules/ng-metadata"
     }
