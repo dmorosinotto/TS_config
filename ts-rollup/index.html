@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Typescript + SystemJS</title>
+        <!-- VENDOR GLOBALS (INCLUDE ONLY IF YOU COMMENT Line 3 in src/main.ts: import "./vendor"; ) --> 
+        <script src="node_modules/jquery/dist/jquery.min.js"></script> <!-- "https://code.jquery.com/jquery-2.2.3.min.js" -->  
+        <script src="node_modules/angular/angular.min.js"></script> <!-- "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" -->
+        <script src="node_modules/lodash/lodash.min.js"></script> <!-- "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js" -->
+        
+        <!-- MY APP STYLES (INCLUDE ONLY IF YOU COMMENT Line 5 in src/main.ts: import "./app/app.style.css"; ) -->
+        <!--<link rel="stylesheet" href="dist/app/app.style.css"><!-- UNCOMMENT THIS LINE IF YOU DON'T USE POSTCSS TO INLINE CSS INTO BUNDLE (Line 5 main.ts) -->
+    </head>
+    <body>
+        <h1>Typescript project build with Rollup</h1>
+        <p id="greeting">Loading ...</p>
+        
+        
+        <hr>    
+        <!-- <aside ng-app="myapp"> <!-- "OLD-STYLE" ANGULAR APP -->
+        <aside>
+            <div ng-controller="MainCtrl as vm">
+                <h3>External name: <input ng-model="vm.name"> {{vm.name}} </h3>
+                <hr>
+                <hello-world name="vm.name" on-changed="vm.show($event)"></hello-world>
+                <smart-cmp></smart-cmp>
+            </div>
+        </aside>
+        <app-metadata>NG-METADATA NOT WORKING...</app-metadata>
+        
+        <!-- MY APP SCRIPTS AND STYLES ALL BUNDLE WITH ROLLUP + POSTCSS -->
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
